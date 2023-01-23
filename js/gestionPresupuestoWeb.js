@@ -187,9 +187,9 @@ function repintar() {
     for (let gasto of gestion.listarGastos()) {
         mostrarGastoWeb("listado-gastos-completo", gasto);
     }
-    mostrarGastosAgrupadosWeb("agrupacion-dia", gestion.agruparGastos("dia"), "día");
+    mostrarGastosAgrupadosWeb("agrupacion-dia", gestion.agruparGastos("dia"), "dia");
     mostrarGastosAgrupadosWeb("agrupacion-mes", gestion.agruparGastos("mes"), "mes");
-    mostrarGastosAgrupadosWeb("agrupacion-anyo", gestion.agruparGastos("anyo"), "año");
+    mostrarGastosAgrupadosWeb("agrupacion-anyo", gestion.agruparGastos("anyo"), "anyo");
 }
 
 function actualizarPresupuestoWeb() {

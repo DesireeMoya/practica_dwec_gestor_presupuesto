@@ -40,9 +40,9 @@ for (let gasto of gestion.filtrarGastos({valorMaximo: 50, etiquetas: "comida", e
     manipularDom.mostrarGastoWeb("listado-gastos-filtrado-4", gasto);  
 }
 
-manipularDom.mostrarGastosAgrupadosWeb("agrupacion-dia", gestion.agruparGastos("dia"), "día");
+manipularDom.mostrarGastosAgrupadosWeb("agrupacion-dia", gestion.agruparGastos("dia"), "dia");
 manipularDom.mostrarGastosAgrupadosWeb("agrupacion-mes", gestion.agruparGastos("mes"), "mes");
-manipularDom.mostrarGastosAgrupadosWeb("agrupacion-anyo", gestion.agruparGastos("anyo"), "año");
+manipularDom.mostrarGastosAgrupadosWeb("agrupacion-anyo", gestion.agruparGastos("anyo"), "anyo");
 
 
 
