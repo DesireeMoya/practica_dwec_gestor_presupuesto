@@ -278,7 +278,7 @@ function EditarHandleFormulario() {
         formulario.querySelector('button.cancelar').addEventListener('click', borrarFormulario);
        
         let botonEditarGastoApi = new editarApiFormulario();
-        botonEditarGastoApi.boton = this.gasto;
+        botonEditarGastoApi.gasto = this.gasto;
         botonEditarGastoApi.boton = event.currentTarget;
         formulario.querySelector('button.gasto-enviar-api').addEventListener('click', botonEditarGastoApi);
 
@@ -290,10 +290,10 @@ function editarApiFormulario(){
         event.preventDefault();
         let boton = event.currentTarget;
         let form = boton.parentElement;
-        let descripcion = this.form.descripcion.value;
-        let valor = Number(this.form.valor.value);
-        let fecha = this.form.fecha.value;
-        let etiquetas = this.form.etiquetas.value.split(',');
+        let descripcion = form.descripcion.value;
+        let valor = Number(form.valor.value);
+        let fecha = form.fecha.value;
+        let etiquetas = form.etiquetas.value.split(',');
         this.gasto.actualizarDescripcion(descripcion);
         this.gasto.actualizarFecha(fecha);
         this.gasto.actualizarValor(valor);
@@ -383,12 +383,13 @@ function submitApiFormulario(event){
               body: JSON.stringify(nuevoGasto)
         }).then(function(respuesta){
             if(respuesta.ok){
-                cargaGastosApi();             
+                cargaGastosApi();  
+                        
             }
         }); 
-    }
+    } 
     form.remove();
-    boton.removeAttribute('disabled', 'disabled');
+    document.getElementById('anyadirgasto-formulario').removeAttribute('disabled', 'disabled');
 }
 
 
